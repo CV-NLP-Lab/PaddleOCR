@@ -1,27 +1,27 @@
 Global:
   use_gpu: True
-  epoch_num: 72
+  epoch_num: 1000
   distort: True
   log_smooth_window: 20
-  print_batch_step: 5
-  save_model_dir: ./output/rec/srn_new
-  save_epoch_step: 3
+  print_batch_step: 100
+  save_model_dir: ./output/rec/srn_ic15
+  save_epoch_step: 40
   # evaluation is run every 5000 iterations after the 4000th iteration
   eval_batch_step: [0, 2000]
   cal_metric_during_train: True
-  pretrained_model: ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
-  checkpoints:
+  pretrained_model:
+  checkpoints: # ./output/rec/srn_ic15/iter_epoch_840
   save_inference_dir:
   use_visualdl: False
-  infer_img: doc/imgs_words/ch/word_1.jpg
+  infer_img: 
   # for data or label process
-  character_dict_path: ppocr/utils/ic15_dict.txt
+  character_dict_path: ppocr/utils/dict/iam_dict.txt
   character_type: en
   max_text_length: 25
   num_heads: 8
   infer_mode: False
-  use_space_char: true
-  save_res_path: ./output/rec/predicts_srn.txt
+  use_space_char: False
+  save_res_path: ./output/rec/predicts_srn_ic15.txt
 
 
 Optimizer:
@@ -54,14 +54,15 @@ PostProcess:
   name: SRNLabelDecode
 
 Metric:
-  name: RecMetric
-  main_indicator: acc
+  name: RecFullMetric
+  main_indicator: acc_luc_full
+  long_word_min_len: 10
 
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./train_data/rec/ic15_data/
-    label_file_list: ["./train_data/rec/ic15_data/rec_gt_train.txt"]
+    data_dir: /home/astrashnov/data/rec/ic15_data/
+    label_file_list: ["/home/astrashnov/data/rec/ic15_data/rec_gt_train.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -87,8 +88,8 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./test_data/rec/ic15_data/
-    label_file_list: ["./test_data/rec/ic15_data/rec_gt_test.txt"]
+    data_dir: /home/astrashnov/data/rec/ic15_data/
+    label_file_list: ["/home/astrashnov/data/rec/ic15_data/rec_gt_test.txt"]
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

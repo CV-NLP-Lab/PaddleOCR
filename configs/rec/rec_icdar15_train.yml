@@ -33,7 +33,7 @@ Optimizer:
 
 Architecture:
   model_type: rec
-  algorithm: CRNN
+  algorithm: SRN
   Transform:
   Backbone:
     name: MobileNetV3
