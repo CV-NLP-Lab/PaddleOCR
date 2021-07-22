@@ -1,0 +1,16 @@
+MJSST: 3 итерации
+Original: 20 итераций
+Конфиг: output/rec/srn_MJSST+original_MC_Num.yml
+
+Accuracy (LC + UC, all words): 0.7649112925936356
+Accuracy (LC + UC, long words): 0.5868945868945868
+Accuracy (MC, all words): 0.8577302168403267
+Accuracy (MC, long words): 0.6253561253561254
+Normalized edit distance 1 (LC + UC, all words): 0.9159095599183423
+Normalized edit distance 1 (LC + UC, long words): 0.9263414482444805
+Normalized edit distance 1 (MC, all words): 0.9510301660245859
+Normalized edit distance 1 (MC, long words): 0.9339999696850533
+Normalized edit distance 2 (LC + UC, all words): 0.9212822841000807
+Normalized edit distance 2 (LC + UC, long words): 0.9249642996235233
+Normalized edit distance 2 (MC, all words): 0.9470717312348669
+Normalized edit distance 2 (MC, long words): 0.9326236531221602

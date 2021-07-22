@@ -57,3 +57,86 @@ class RecMetric(object):
         self.correct_num = 0
         self.all_num = 0
         self.norm_edit_dis = 0
+
+class RecFullMetric(object):
+    def __init__(self, main_indicator='acc_luc_full', long_word_min_len=10, **kwargs):
+        self.main_indicator = main_indicator
+        self.long_word_min_len = long_word_min_len
+        self.cases = ['luc_full', 'luc_long', 'mc_full', 'mc_long']
+        self.reset()
+
+    def __call__(self, pred_label, *args, **kwargs):
+        preds, labels = pred_label
+
+        correct_num = {case: 0 for case in self.cases}
+        edit_dis = {case: 0.0 for case in self.cases}
+        norm_edit_dis = {case: 0.0 for case in self.cases}
+        long_num = 0
+        all_num = 0
+        long_char = 0
+        all_char = 0
+
+        for (pred, pred_conf), (target, _) in zip(preds, labels):
+            pred = pred.replace(" ", "")
+            target = target.replace(" ", "")
+            pred_target = {'luc': (pred, target), 'mc': (pred.lower(), target.lower())}
+
+            is_long = (len(target) >= self.long_word_min_len)
+
+            for case, (pred, target) in pred_target.items():
+                cur_edit_dis = Levenshtein.distance(pred, target)
+                is_correct = int(pred == target)
+
+                correct_num[case + '_full'] += is_correct
+                edit_dis[case + '_full'] += cur_edit_dis
+                norm_edit_dis[case + '_full'] += cur_edit_dis / len(target)
+
+                if is_long:
+                    correct_num[case + '_long'] += is_correct
+                    edit_dis[case + '_long'] += cur_edit_dis
+                    norm_edit_dis[case + '_long'] += cur_edit_dis / len(target)
+
+            all_char += len(target)
+            all_num += 1
+
+            if is_long:
+                long_char += len(target)
+                long_num += 1
+
+        for case in self.cases:
+            self.correct_num[case] += correct_num[case]
+            self.norm_edit_dis[case] += norm_edit_dis[case]
+            self.edit_dis[case] += edit_dis[case]
+
+        self.all_num += all_num
+        self.long_num += long_num
+        self.all_char += all_char
+        self.long_char += long_char
+
+        acc = {'acc_' + case: 1.0 * correct_num / max(all_num if (case[-4:] == 'full') else long_num, 1)
+                for case, correct_num in correct_num.items()}
+        norm_edit_dis = {'norm_edit_dis_' + case: 1 - dis / max(all_num if (case[-4:] == 'full') else long_num, 1)
+                for case, dis in norm_edit_dis.items()}
+        edit_dis = {'edit_dis_' + case: 1 - dis / max(all_char if (case[-4:] == 'full') else long_char, 1)
+                for case, dis in edit_dis.items()}
+        return dict(**acc, **norm_edit_dis, **edit_dis)
+
+    def get_metric(self):
+        acc = {'acc_' + case: 1.0 * correct_num / max(self.all_num if (case[-4:] == 'full') else self.long_num, 1)
+                for case, correct_num in self.correct_num.items()}
+        norm_edit_dis = {'norm_edit_dis_' + case: 1 - dis / max(self.all_num if (case[-4:] == 'full') else self.long_num, 1)
+                for case, dis in self.norm_edit_dis.items()}
+        edit_dis = {'edit_dis_' + case: 1 - dis / max(self.all_char if (case[-4:] == 'full') else self.long_char, 1)
+                for case, dis in self.edit_dis.items()}
+        self.reset()
+        return dict(**acc, **norm_edit_dis, **edit_dis)
+
+    def reset(self):
+        self.correct_num = {case: 0 for case in self.cases}
+        self.edit_dis = {case: 0.0 for case in self.cases}
+        self.norm_edit_dis = {case: 0.0 for case in self.cases}
+        self.long_num = 0
+        self.all_num = 0
+        self.long_char = 0
+        self.all_char = 0
+
