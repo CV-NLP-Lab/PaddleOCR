@@ -30,12 +30,14 @@ class LMDBDataSet(Dataset):
         batch_size = loader_config['batch_size_per_card']
         data_dir = dataset_config['data_dir']
         self.do_shuffle = loader_config['shuffle']
-
+        
+        self.seed = seed
+        self.random_generator = np.random.RandomState(self.seed)
         self.lmdb_sets = self.load_hierarchical_lmdb_dataset(data_dir)
         logger.info("Initialize indexs of datasets:%s" % data_dir)
         self.data_idx_order_list = self.dataset_traversal()
         if self.do_shuffle:
-            np.random.shuffle(self.data_idx_order_list)
+            self.random_generator.shuffle(self.data_idx_order_list)
         self.ops = create_operators(dataset_config['transforms'], global_config)
 
     def load_hierarchical_lmdb_dataset(self, data_dir):

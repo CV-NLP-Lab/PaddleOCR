@@ -175,6 +175,7 @@ def train(config,
             "During the training process, after the {}th iteration, an evaluation is run every {} iterations".
             format(start_eval_step, eval_batch_step))
     save_epoch_step = config['Global']['save_epoch_step']
+    save_iter_step = config['Global'].get('save_iter_step', 1000000)
     save_model_dir = config['Global']['save_model_dir']
     if not os.path.exists(save_model_dir):
         os.makedirs(save_model_dir)
@@ -201,7 +202,12 @@ def train(config,
         batch_start = time.time()
         max_iter = len(train_dataloader) - 1 if platform.system(
         ) == "Windows" else len(train_dataloader)
+        start_iter = global_step - (global_step // max_iter) * max_iter
         for idx, batch in enumerate(train_dataloader):
+            if start_iter != 0 and idx < start_iter:
+                if idx > 0 and idx % (start_iter // 10) == 0:
+                    logger.info('{}0% of already processed images are skipped'.format(idx // (start_iter // 10)))
+                continue
             train_reader_cost += time.time() - batch_start
             if idx >= max_iter:
                 break
@@ -293,7 +299,7 @@ def train(config,
                         prefix='best_accuracy',
                         best_model_dict=best_model_dict,
                         epoch=epoch,
-                        global_step=global_step)
+                        global_step=global_step + 1)
                 best_str = 'best metric, {}'.format(', '.join([
                     '{}: {}'.format(k, v) for k, v in best_model_dict.items()
                 ]))
@@ -303,6 +309,17 @@ def train(config,
                     vdl_writer.add_scalar('EVAL/best_{}'.format(main_indicator),
                                           best_model_dict[main_indicator],
                                           global_step)
+            if dist.get_rank() == 0 and global_step > 0 and global_step % save_iter_step == 0:
+                save_model(
+                    model,
+                    optimizer,
+                    save_model_dir,
+                    logger,
+                    is_best=False,
+                    prefix='iter_{}'.format(global_step),
+                    best_model_dict=best_model_dict,
+                    epoch=epoch - 1,
+                    global_step=global_step + 1)
             global_step += 1
             optimizer.clear_grad()
             batch_start = time.time()

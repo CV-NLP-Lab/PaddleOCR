@@ -410,7 +410,7 @@ def warp(img, ang, use_tia=True, prob=0.4):
             new_img = tia_stretch(new_img, random.randint(3, 6))
 
     if config.perspective:
-        if random.random() <= prob:
+        if random.random() <= prob and img_height >= 20 and img_width >= 20:
             new_img = tia_perspective(new_img)
 
     if config.crop:
