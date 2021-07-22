@@ -1,5 +1,6 @@
-MJSST: 3 итерации
-Original: 20 итераций
+Словарь: MC+Num
+MJSST: 3 эпохи
+Original: 20 эпох
 Конфиг: output/rec/srn_MJSST+original_MC_Num.yml
 
 Accuracy (LC + UC, all words): 0.7649112925936356

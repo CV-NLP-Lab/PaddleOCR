@@ -1,28 +1,25 @@
 Global:
   use_gpu: True
-  epoch_num: 6
+  epoch_num: 600
   log_smooth_window: 20
   print_batch_step: 100
-  save_model_dir: ./output/rec/srn_MJSST_MC_Num_Pc3
-  save_iter_step: 20000
-  save_epoch_step: 1
-  # evaluation is run every 5000 iterations after the 4000th iteration
-  eval_batch_step: [0, 5000]
+  save_model_dir: ./output/rec/srn_original_LC_UC_Num_Pc3
+  save_epoch_step: 60
+  eval_batch_step: [0, 1000]
   cal_metric_during_train: True
-  pretrained_model: # ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
-  checkpoints: # ./output/rec/srn_lmdb/iter_260000
+  pretrained_model: 
+  checkpoints: # ./output/rec/srn_original_LC_UC_Num_Pc3/latest
   save_inference_dir:
   use_visualdl: False
-  infer_img: 
+  infer_img:
   # for data or label process
-  character_dict_path: ppocr/utils/iam_dict.txt
-  character_type: en
+  character_dict_path: ppocr/utils/dict/iam_dict.txt
+  character_type: EN
   max_text_length: 25
   num_heads: 8
   infer_mode: False
   use_space_char: False
-  save_res_path: ./output/rec/predicts_srn_MJSST_MC_Num_Pc3.txt
-
+  save_res_path: ./output/rec/predicts_srn_original_LC_UC_Num_Pc3.txt
 
 Optimizer:
   name: Adam
@@ -61,7 +58,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/training/
+    data_dir: /home/astrashnov/data/rec/iam_data/lmdb_release/training/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -87,7 +84,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/validation/
+    data_dir: /home/astrashnov/data/rec/iam_data/lmdb_release/validation/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

@@ -1,5 +1,6 @@
+Словарь: MC+Num
 Предобученная модель: pretrain_models/rec_r50_vd_srn_train/
-Original: 20 итераций
+Original: 20 эпох
 Конфиг: output/rec/srn_pretrained_original_MC_Num.yml
 
 Accuracy (LC + UC, all words): 0.7889045339341031
