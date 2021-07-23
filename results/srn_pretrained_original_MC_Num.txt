@@ -1,17 +1,12 @@
-Словарь: MC+Num
-Предобученная модель: pretrain_models/rec_r50_vd_srn_train/
-Original: 20 эпох
-Конфиг: output/rec/srn_pretrained_original_MC_Num.yml
-
 Accuracy (LC + UC, all words): 0.7889045339341031
 Accuracy (LC + UC, long words): 0.6638176638176638
 Accuracy (MC, all words): 0.8854407209236834
 Accuracy (MC, long words): 0.707977207977208
-Normalized edit distance 1 (LC + UC, all words): 0.9241902855792504
-Normalized edit distance 1 (LC + UC, long words): 0.940437339776468
-Normalized edit distance 1 (MC, all words): 0.9595709387506666
-Normalized edit distance 1 (MC, long words): 0.9484735699280828
-Normalized edit distance 2 (LC + UC, all words): 0.9305891848264729
-Normalized edit distance 2 (LC + UC, long words): 0.9388549915617292
-Normalized edit distance 2 (MC, all words): 0.9565425746569814
-Normalized edit distance 2 (MC, long words): 0.9469038037128391
+Normalized edit distance 1 (LC + UC, all words): 0.0758097144207496
+Normalized edit distance 1 (LC + UC, long words): 0.059562660223531974
+Normalized edit distance 1 (MC, all words): 0.04042906124933345
+Normalized edit distance 1 (MC, long words): 0.05152643007191715
+Normalized edit distance 2 (LC + UC, all words): 0.06941081517352704
+Normalized edit distance 2 (LC + UC, long words): 0.0611450084382708
+Normalized edit distance 2 (MC, all words): 0.043457425343018566
+Normalized edit distance 2 (MC, long words): 0.05309619628716085

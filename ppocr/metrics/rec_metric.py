@@ -115,18 +115,18 @@ class RecFullMetric(object):
 
         acc = {'acc_' + case: 1.0 * correct_num / max(all_num if (case[-4:] == 'full') else long_num, 1)
                 for case, correct_num in correct_num.items()}
-        norm_edit_dis = {'norm_edit_dis_' + case: 1 - dis / max(all_num if (case[-4:] == 'full') else long_num, 1)
+        norm_edit_dis = {'norm_edit_dis_' + case: dis / max(all_num if (case[-4:] == 'full') else long_num, 1)
                 for case, dis in norm_edit_dis.items()}
-        edit_dis = {'edit_dis_' + case: 1 - dis / max(all_char if (case[-4:] == 'full') else long_char, 1)
+        edit_dis = {'edit_dis_' + case: dis / max(all_char if (case[-4:] == 'full') else long_char, 1)
                 for case, dis in edit_dis.items()}
         return dict(**acc, **norm_edit_dis, **edit_dis)
 
     def get_metric(self):
         acc = {'acc_' + case: 1.0 * correct_num / max(self.all_num if (case[-4:] == 'full') else self.long_num, 1)
                 for case, correct_num in self.correct_num.items()}
-        norm_edit_dis = {'norm_edit_dis_' + case: 1 - dis / max(self.all_num if (case[-4:] == 'full') else self.long_num, 1)
+        norm_edit_dis = {'norm_edit_dis_' + case: dis / max(self.all_num if (case[-4:] == 'full') else self.long_num, 1)
                 for case, dis in self.norm_edit_dis.items()}
-        edit_dis = {'edit_dis_' + case: 1 - dis / max(self.all_char if (case[-4:] == 'full') else self.long_char, 1)
+        edit_dis = {'edit_dis_' + case: dis / max(self.all_char if (case[-4:] == 'full') else self.long_char, 1)
                 for case, dis in self.edit_dis.items()}
         self.reset()
         return dict(**acc, **norm_edit_dis, **edit_dis)

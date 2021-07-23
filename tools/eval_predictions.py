@@ -104,9 +104,9 @@ def general_stat(predictions_file, target_file, long_word_min_len=10):
 
     acc = {'Accuracy ({})'.format(case): 1.0 * correct_num / max(all_num if (case[-9:-6] == 'all') else long_num, 1) 
             for case, correct_num in correct_num.items()}
-    norm_edit_dis = {'Normalized edit distance 1 ({})'.format(case): 1 - dis / max(all_num if (case[-9:-6] == 'all') else long_num, 1) 
+    norm_edit_dis = {'Normalized edit distance 1 ({})'.format(case): dis / max(all_num if (case[-9:-6] == 'all') else long_num, 1) 
             for case, dis in norm_edit_dis.items()}
-    edit_dis = {'Normalized edit distance 2 ({})'.format(case): 1 - dis / max(all_char if (case[-9:-6] == 'all') else long_char, 1) 
+    edit_dis = {'Normalized edit distance 2 ({})'.format(case): dis / max(all_char if (case[-9:-6] == 'all') else long_char, 1) 
             for case, dis in edit_dis.items()}
     quality_dict = dict(**acc, **norm_edit_dis, **edit_dis)
 
