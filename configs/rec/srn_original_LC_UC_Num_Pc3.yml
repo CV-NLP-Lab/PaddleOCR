@@ -10,7 +10,7 @@ Global:
   pretrained_model: 
   checkpoints: # ./output/rec/srn_original_LC_UC_Num_Pc3/latest
   save_inference_dir:
-  use_visualdl: False
+  use_visualdl: True
   infer_img:
   # for data or label process
   character_dict_path: ppocr/utils/dict/iam_dict.txt

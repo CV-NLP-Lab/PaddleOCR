@@ -87,7 +87,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/validation/
+    data_dir: /home/astrashnov/data/data_lmdb_release/evaluation/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

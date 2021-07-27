@@ -1,0 +1,96 @@
+ICDAR2013:
+[2021/07/26 08:31:25] root INFO: metric eval ***************
+[2021/07/26 08:31:25] root INFO: acc_luc_full:0.9509918319719953
+[2021/07/26 08:31:25] root INFO: acc_luc_long:0.9354838709677419
+[2021/07/26 08:31:25] root INFO: acc_mc_full:0.9509918319719953
+[2021/07/26 08:31:25] root INFO: acc_mc_long:0.9354838709677419
+[2021/07/26 08:31:25] root INFO: norm_edit_dis_luc_full:0.016526581311398388
+[2021/07/26 08:31:25] root INFO: norm_edit_dis_luc_long:0.01731296323326684
+[2021/07/26 08:31:25] root INFO: norm_edit_dis_mc_full:0.016526581311398388
+[2021/07/26 08:31:25] root INFO: norm_edit_dis_mc_long:0.01731296323326684
+[2021/07/26 08:31:25] root INFO: edit_dis_luc_full:0.016929363689433742
+[2021/07/26 08:31:25] root INFO: edit_dis_luc_long:0.017424975798644726
+[2021/07/26 08:31:25] root INFO: edit_dis_mc_full:0.016929363689433742
+[2021/07/26 08:31:25] root INFO: edit_dis_mc_long:0.017424975798644726
+[2021/07/26 08:31:25] root INFO: fps:207.94076405876527
+
+ICDAR2015:
+[2021/07/26 08:36:59] root INFO: metric eval ***************
+[2021/07/26 08:36:59] root INFO: acc_luc_full:0.7636664826062949
+[2021/07/26 08:36:59] root INFO: acc_luc_long:0.671875
+[2021/07/26 08:36:59] root INFO: acc_mc_full:0.7636664826062949
+[2021/07/26 08:36:59] root INFO: acc_mc_long:0.671875
+[2021/07/26 08:36:59] root INFO: norm_edit_dis_luc_full:0.10712457062539892
+[2021/07/26 08:36:59] root INFO: norm_edit_dis_luc_long:0.0901447510822511
+[2021/07/26 08:36:59] root INFO: norm_edit_dis_mc_full:0.10712457062539892
+[2021/07/26 08:36:59] root INFO: norm_edit_dis_mc_long:0.0901447510822511
+[2021/07/26 08:36:59] root INFO: edit_dis_luc_full:0.10219206680584551
+[2021/07/26 08:36:59] root INFO: edit_dis_luc_long:0.09183673469387756
+[2021/07/26 08:36:59] root INFO: edit_dis_mc_full:0.10219206680584551
+[2021/07/26 08:36:59] root INFO: edit_dis_mc_long:0.09183673469387756
+[2021/07/26 08:36:59] root INFO: fps:206.87964092818032
+
+IIIT5K:
+[2021/07/26 08:49:57] root INFO: metric eval ***************
+[2021/07/26 08:49:57] root INFO: acc_luc_full:0.8906666666666667
+[2021/07/26 08:49:57] root INFO: acc_luc_long:0.7435897435897436
+[2021/07/26 08:49:57] root INFO: acc_mc_full:0.8906666666666667
+[2021/07/26 08:49:57] root INFO: acc_mc_long:0.7435897435897436
+[2021/07/26 08:49:57] root INFO: norm_edit_dis_luc_full:0.039075567049909166
+[2021/07/26 08:49:57] root INFO: norm_edit_dis_luc_long:0.07679661909165954
+[2021/07/26 08:49:57] root INFO: norm_edit_dis_mc_full:0.039075567049909166
+[2021/07/26 08:49:57] root INFO: norm_edit_dis_mc_long:0.07679661909165954
+[2021/07/26 08:49:57] root INFO: edit_dis_luc_full:0.04230794420066802
+[2021/07/26 08:49:57] root INFO: edit_dis_luc_long:0.11243243243243244
+[2021/07/26 08:49:57] root INFO: edit_dis_mc_full:0.04230794420066802
+[2021/07/26 08:49:57] root INFO: edit_dis_mc_long:0.11243243243243244
+[2021/07/26 08:49:57] root INFO: fps:203.41783474580362
+
+SVT:
+[2021/07/26 08:51:23] root INFO: metric eval ***************
+[2021/07/26 08:51:23] root INFO: acc_luc_full:0.8887171561051005
+[2021/07/26 08:51:23] root INFO: acc_luc_long:0.9069767441860465
+[2021/07/26 08:51:23] root INFO: acc_mc_full:0.8887171561051005
+[2021/07/26 08:51:23] root INFO: acc_mc_long:0.9069767441860465
+[2021/07/26 08:51:23] root INFO: norm_edit_dis_luc_full:0.04915259907531932
+[2021/07/26 08:51:23] root INFO: norm_edit_dis_luc_long:0.03636363636363636
+[2021/07/26 08:51:23] root INFO: norm_edit_dis_mc_full:0.04915259907531932
+[2021/07/26 08:51:23] root INFO: norm_edit_dis_mc_long:0.03636363636363636
+[2021/07/26 08:51:23] root INFO: edit_dis_luc_full:0.04715489989462592
+[2021/07/26 08:51:23] root INFO: edit_dis_luc_long:0.03587443946188341
+[2021/07/26 08:51:23] root INFO: edit_dis_mc_full:0.04715489989462592
+[2021/07/26 08:51:23] root INFO: edit_dis_mc_long:0.03587443946188341
+[2021/07/26 08:51:23] root INFO: fps:219.93928324350048
+
+SVTP:
+[2021/07/26 08:52:32] root INFO: metric eval ***************
+[2021/07/26 08:52:32] root INFO: acc_luc_full:0.7937984496124031
+[2021/07/26 08:52:32] root INFO: acc_luc_long:0.8780487804878049
+[2021/07/26 08:52:32] root INFO: acc_mc_full:0.7937984496124031
+[2021/07/26 08:52:32] root INFO: acc_mc_long:0.8780487804878049
+[2021/07/26 08:52:32] root INFO: norm_edit_dis_luc_full:0.0967743324720069
+[2021/07/26 08:52:32] root INFO: norm_edit_dis_luc_long:0.07073170731707316
+[2021/07/26 08:52:32] root INFO: norm_edit_dis_mc_full:0.0967743324720069
+[2021/07/26 08:52:32] root INFO: norm_edit_dis_mc_long:0.07073170731707316
+[2021/07/26 08:52:32] root INFO: edit_dis_luc_full:0.09928703459202536
+[2021/07/26 08:52:32] root INFO: edit_dis_luc_long:0.06839622641509434
+[2021/07/26 08:52:32] root INFO: edit_dis_mc_full:0.09928703459202536
+[2021/07/26 08:52:32] root INFO: edit_dis_mc_long:0.06839622641509434
+[2021/07/26 08:52:32] root INFO: fps:204.7438138683024
+
+CUTE:
+[2021/07/26 08:54:19] root INFO: metric eval ***************
+[2021/07/26 08:54:19] root INFO: acc_luc_full:0.7986111111111112
+[2021/07/26 08:54:19] root INFO: acc_luc_long:0.6428571428571429
+[2021/07/26 08:54:19] root INFO: acc_mc_full:0.7986111111111112
+[2021/07/26 08:54:19] root INFO: acc_mc_long:0.6428571428571429
+[2021/07/26 08:54:19] root INFO: norm_edit_dis_luc_full:0.09805412649615547
+[2021/07/26 08:54:19] root INFO: norm_edit_dis_luc_long:0.2285647065150171
+[2021/07/26 08:54:19] root INFO: norm_edit_dis_mc_full:0.09805412649615547
+[2021/07/26 08:54:19] root INFO: norm_edit_dis_mc_long:0.2285647065150171
+[2021/07/26 08:54:19] root INFO: edit_dis_luc_full:0.11041405269761606
+[2021/07/26 08:54:19] root INFO: edit_dis_luc_long:0.26785714285714285
+[2021/07/26 08:54:19] root INFO: edit_dis_mc_full:0.11041405269761606
+[2021/07/26 08:54:19] root INFO: edit_dis_mc_long:0.26785714285714285
+[2021/07/26 08:54:19] root INFO: fps:204.68797797429386
+

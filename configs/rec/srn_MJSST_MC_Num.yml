@@ -1,18 +1,18 @@
 Global:
   use_gpu: True
-  epoch_num: 6
+  epoch_num: 1
   log_smooth_window: 20
-  print_batch_step: 100
-  save_model_dir: ./output/rec/srn_MJSST_MC_Num
+  print_batch_step: 10
+  save_model_dir: ./output/rec/srn_MJSST_MC_Num_2
   save_iter_step: 10000
   save_epoch_step: 1
   # evaluation is run every 5000 iterations after the 4000th iteration
-  eval_batch_step: [0, 2000]
+  eval_batch_step: [0, 100]
   cal_metric_during_train: True
   pretrained_model: # ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
   checkpoints: # ./output/rec/srn_lmdb/iter_260000
   save_inference_dir:
-  use_visualdl: False
+  use_visualdl: True
   infer_img: 
   # for data or label process
   character_dict_path: ppocr/utils/en_dict.txt
