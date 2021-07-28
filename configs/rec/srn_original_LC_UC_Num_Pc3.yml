@@ -8,7 +8,7 @@ Global:
   eval_batch_step: [0, 1000]
   cal_metric_during_train: True
   pretrained_model: 
-  checkpoints: # ./output/rec/srn_original_LC_UC_Num_Pc3/latest
+  checkpoints: ./output/rec/srn_original_LC_UC_Num_Pc3/latest
   save_inference_dir:
   use_visualdl: True
   infer_img:

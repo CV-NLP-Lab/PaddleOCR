@@ -68,6 +68,9 @@ Train:
           channel_first: False
       - SRNLabelEncode: # Class handling label
       - RecAug:
+      - IaaAugment:
+          augmenter_args:
+            - { 'type': Affine, 'args': { 'rotate': [-30, 30] } }
       - SRNRecResizeImg:
           image_shape: [1, 64, 256]
       - KeepKeys:
