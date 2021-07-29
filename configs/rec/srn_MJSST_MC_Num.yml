@@ -3,7 +3,7 @@ Global:
   epoch_num: 1
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: ./output/rec/srn_MJSST_MC_Num_2
+  save_model_dir: ./output/rec/srn_MJSST_MC_Num
   save_iter_step: 10000
   save_epoch_step: 1
   # evaluation is run every 5000 iterations after the 4000th iteration
