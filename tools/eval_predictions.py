@@ -13,7 +13,7 @@ def get_dict(filename):
         l = line.strip('\n')
         if len(l) == 0:
             continue
-        img_path, label = l.split('\t')[:2]
+        img_path, label = l.split()[:2]
         word_dict[pathlib.PurePath(img_path).name] = label
     return word_dict
 
@@ -110,8 +110,8 @@ def general_stat(predictions_file, target_file, long_word_min_len=10):
             for case, dis in edit_dis.items()}
     quality_dict = dict(**acc, **norm_edit_dis, **edit_dis)
 
-    for key, value in quality_dict.items():
-        print(f'{key}: {value}')
+    return quality_dict
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -123,5 +123,7 @@ if __name__ == '__main__':
     if args.mode == 'full':
         detailed_stat(args.predictions_file, args.target_file, args.long_len)
     else:
-        general_stat(args.predictions_file, args.target_file, args.long_len)
+        quality_dict = general_stat(args.predictions_file, args.target_file, args.long_len)
+        for key, value in quality_dict.items():
+            print(f'{key}: {value}')
 

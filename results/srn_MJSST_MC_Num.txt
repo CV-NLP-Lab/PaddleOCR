@@ -1,96 +1,84 @@
-ICDAR2013:
-[2021/07/26 08:31:25] root INFO: metric eval ***************
-[2021/07/26 08:31:25] root INFO: acc_luc_full:0.9509918319719953
-[2021/07/26 08:31:25] root INFO: acc_luc_long:0.9354838709677419
-[2021/07/26 08:31:25] root INFO: acc_mc_full:0.9509918319719953
-[2021/07/26 08:31:25] root INFO: acc_mc_long:0.9354838709677419
-[2021/07/26 08:31:25] root INFO: norm_edit_dis_luc_full:0.016526581311398388
-[2021/07/26 08:31:25] root INFO: norm_edit_dis_luc_long:0.01731296323326684
-[2021/07/26 08:31:25] root INFO: norm_edit_dis_mc_full:0.016526581311398388
-[2021/07/26 08:31:25] root INFO: norm_edit_dis_mc_long:0.01731296323326684
-[2021/07/26 08:31:25] root INFO: edit_dis_luc_full:0.016929363689433742
-[2021/07/26 08:31:25] root INFO: edit_dis_luc_long:0.017424975798644726
-[2021/07/26 08:31:25] root INFO: edit_dis_mc_full:0.016929363689433742
-[2021/07/26 08:31:25] root INFO: edit_dis_mc_long:0.017424975798644726
-[2021/07/26 08:31:25] root INFO: fps:207.94076405876527
+ICDAR2013 (857 images):
+Accuracy (LC + UC, all words): 0.23337222870478413
+Accuracy (LC + UC, long words): 0.12903225806451613
+Accuracy (MC, all words): 0.9451575262543758
+Accuracy (MC, long words): 0.9354838709677419
+Normalized edit distance 1 (LC + UC, all words): 0.49260268437270094
+Normalized edit distance 1 (LC + UC, long words): 0.40635117459745457
+Normalized edit distance 1 (MC, all words): 0.020910792176836515
+Normalized edit distance 1 (MC, long words): 0.01725031241160273
+Normalized edit distance 2 (LC + UC, all words): 0.47947071414672116
+Normalized edit distance 2 (LC + UC, long words): 0.4027105517909003
+Normalized edit distance 2 (MC, all words): 0.018680677174547577
+Normalized edit distance 2 (MC, long words): 0.017424975798644726
 
-ICDAR2015:
-[2021/07/26 08:36:59] root INFO: metric eval ***************
-[2021/07/26 08:36:59] root INFO: acc_luc_full:0.7636664826062949
-[2021/07/26 08:36:59] root INFO: acc_luc_long:0.671875
-[2021/07/26 08:36:59] root INFO: acc_mc_full:0.7636664826062949
-[2021/07/26 08:36:59] root INFO: acc_mc_long:0.671875
-[2021/07/26 08:36:59] root INFO: norm_edit_dis_luc_full:0.10712457062539892
-[2021/07/26 08:36:59] root INFO: norm_edit_dis_luc_long:0.0901447510822511
-[2021/07/26 08:36:59] root INFO: norm_edit_dis_mc_full:0.10712457062539892
-[2021/07/26 08:36:59] root INFO: norm_edit_dis_mc_long:0.0901447510822511
-[2021/07/26 08:36:59] root INFO: edit_dis_luc_full:0.10219206680584551
-[2021/07/26 08:36:59] root INFO: edit_dis_luc_long:0.09183673469387756
-[2021/07/26 08:36:59] root INFO: edit_dis_mc_full:0.10219206680584551
-[2021/07/26 08:36:59] root INFO: edit_dis_mc_long:0.09183673469387756
-[2021/07/26 08:36:59] root INFO: fps:206.87964092818032
+ICDAR2015 (1811 images):
+Accuracy (LC + UC, all words): 0.7658752070679182
+Accuracy (LC + UC, long words): 0.6875
+Accuracy (MC, all words): 0.7658752070679182
+Accuracy (MC, long words): 0.6875
+Normalized edit distance 1 (LC + UC, all words): 0.10644197357339265
+Normalized edit distance 1 (LC + UC, long words): 0.0843648538961039
+Normalized edit distance 1 (MC, all words): 0.10644197357339265
+Normalized edit distance 1 (MC, long words): 0.0843648538961039
+Normalized edit distance 2 (LC + UC, all words): 0.10198329853862213
+Normalized edit distance 2 (LC + UC, long words): 0.08600583090379009
+Normalized edit distance 2 (MC, all words): 0.10198329853862213
+Normalized edit distance 2 (MC, long words): 0.08600583090379009
 
-IIIT5K:
-[2021/07/26 08:49:57] root INFO: metric eval ***************
-[2021/07/26 08:49:57] root INFO: acc_luc_full:0.8906666666666667
-[2021/07/26 08:49:57] root INFO: acc_luc_long:0.7435897435897436
-[2021/07/26 08:49:57] root INFO: acc_mc_full:0.8906666666666667
-[2021/07/26 08:49:57] root INFO: acc_mc_long:0.7435897435897436
-[2021/07/26 08:49:57] root INFO: norm_edit_dis_luc_full:0.039075567049909166
-[2021/07/26 08:49:57] root INFO: norm_edit_dis_luc_long:0.07679661909165954
-[2021/07/26 08:49:57] root INFO: norm_edit_dis_mc_full:0.039075567049909166
-[2021/07/26 08:49:57] root INFO: norm_edit_dis_mc_long:0.07679661909165954
-[2021/07/26 08:49:57] root INFO: edit_dis_luc_full:0.04230794420066802
-[2021/07/26 08:49:57] root INFO: edit_dis_luc_long:0.11243243243243244
-[2021/07/26 08:49:57] root INFO: edit_dis_mc_full:0.04230794420066802
-[2021/07/26 08:49:57] root INFO: edit_dis_mc_long:0.11243243243243244
-[2021/07/26 08:49:57] root INFO: fps:203.41783474580362
+III5k (3000 images):
+Accuracy (LC + UC, all words): 0.8866666666666667
+Accuracy (LC + UC, long words): 0.75
+Accuracy (MC, all words): 0.8866666666666667
+Accuracy (MC, long words): 0.75
+Normalized edit distance 1 (LC + UC, all words): 0.04075018448756838
+Normalized edit distance 1 (LC + UC, long words): 0.08037595321025896
+Normalized edit distance 1 (MC, all words): 0.04075018448756838
+Normalized edit distance 1 (MC, long words): 0.08037595321025896
+Normalized edit distance 2 (LC + UC, all words): 0.04401074071648438
+Normalized edit distance 2 (LC + UC, long words): 0.11567567567567567
+Normalized edit distance 2 (MC, all words): 0.04401074071648438
+Normalized edit distance 2 (MC, long words): 0.11567567567567567
 
-SVT:
-[2021/07/26 08:51:23] root INFO: metric eval ***************
-[2021/07/26 08:51:23] root INFO: acc_luc_full:0.8887171561051005
-[2021/07/26 08:51:23] root INFO: acc_luc_long:0.9069767441860465
-[2021/07/26 08:51:23] root INFO: acc_mc_full:0.8887171561051005
-[2021/07/26 08:51:23] root INFO: acc_mc_long:0.9069767441860465
-[2021/07/26 08:51:23] root INFO: norm_edit_dis_luc_full:0.04915259907531932
-[2021/07/26 08:51:23] root INFO: norm_edit_dis_luc_long:0.03636363636363636
-[2021/07/26 08:51:23] root INFO: norm_edit_dis_mc_full:0.04915259907531932
-[2021/07/26 08:51:23] root INFO: norm_edit_dis_mc_long:0.03636363636363636
-[2021/07/26 08:51:23] root INFO: edit_dis_luc_full:0.04715489989462592
-[2021/07/26 08:51:23] root INFO: edit_dis_luc_long:0.03587443946188341
-[2021/07/26 08:51:23] root INFO: edit_dis_mc_full:0.04715489989462592
-[2021/07/26 08:51:23] root INFO: edit_dis_mc_long:0.03587443946188341
-[2021/07/26 08:51:23] root INFO: fps:219.93928324350048
+SVT(647 images):
+Accuracy (LC + UC, all words): 0.0
+Accuracy (LC + UC, long words): 0.0
+Accuracy (MC, all words): 0.8825347758887172
+Accuracy (MC, long words): 0.9069767441860465
+Normalized edit distance 1 (LC + UC, all words): 1.0048428645028338
+Normalized edit distance 1 (LC + UC, long words): 1.0
+Normalized edit distance 1 (MC, all words): 0.05028057122338421
+Normalized edit distance 1 (MC, long words): 0.038477801268498944
+Normalized edit distance 2 (LC + UC, all words): 1.0034246575342465
+Normalized edit distance 2 (LC + UC, long words): 1.0
+Normalized edit distance 2 (MC, all words): 0.04794520547945205
+Normalized edit distance 2 (MC, long words): 0.03811659192825112
 
-SVTP:
-[2021/07/26 08:52:32] root INFO: metric eval ***************
-[2021/07/26 08:52:32] root INFO: acc_luc_full:0.7937984496124031
-[2021/07/26 08:52:32] root INFO: acc_luc_long:0.8780487804878049
-[2021/07/26 08:52:32] root INFO: acc_mc_full:0.7937984496124031
-[2021/07/26 08:52:32] root INFO: acc_mc_long:0.8780487804878049
-[2021/07/26 08:52:32] root INFO: norm_edit_dis_luc_full:0.0967743324720069
-[2021/07/26 08:52:32] root INFO: norm_edit_dis_luc_long:0.07073170731707316
-[2021/07/26 08:52:32] root INFO: norm_edit_dis_mc_full:0.0967743324720069
-[2021/07/26 08:52:32] root INFO: norm_edit_dis_mc_long:0.07073170731707316
-[2021/07/26 08:52:32] root INFO: edit_dis_luc_full:0.09928703459202536
-[2021/07/26 08:52:32] root INFO: edit_dis_luc_long:0.06839622641509434
-[2021/07/26 08:52:32] root INFO: edit_dis_mc_full:0.09928703459202536
-[2021/07/26 08:52:32] root INFO: edit_dis_mc_long:0.06839622641509434
-[2021/07/26 08:52:32] root INFO: fps:204.7438138683024
+SVTP(645 images):
+Accuracy (LC + UC, all words): 0.0
+Accuracy (LC + UC, long words): 0.0
+Accuracy (MC, all words): 0.7984496124031008
+Accuracy (MC, long words): 0.8780487804878049
+Normalized edit distance 1 (LC + UC, all words): 1.0024067921742341
+Normalized edit distance 1 (LC + UC, long words): 1.002439024390244
+Normalized edit distance 1 (MC, all words): 0.09597145318075553
+Normalized edit distance 1 (MC, long words): 0.06829268292682926
+Normalized edit distance 2 (LC + UC, all words): 1.0018484288354899
+Normalized edit distance 2 (LC + UC, long words): 1.0023584905660377
+Normalized edit distance 2 (MC, all words): 0.09743860575653551
+Normalized edit distance 2 (MC, long words): 0.0660377358490566
 
-CUTE:
-[2021/07/26 08:54:19] root INFO: metric eval ***************
-[2021/07/26 08:54:19] root INFO: acc_luc_full:0.7986111111111112
-[2021/07/26 08:54:19] root INFO: acc_luc_long:0.6428571428571429
-[2021/07/26 08:54:19] root INFO: acc_mc_full:0.7986111111111112
-[2021/07/26 08:54:19] root INFO: acc_mc_long:0.6428571428571429
-[2021/07/26 08:54:19] root INFO: norm_edit_dis_luc_full:0.09805412649615547
-[2021/07/26 08:54:19] root INFO: norm_edit_dis_luc_long:0.2285647065150171
-[2021/07/26 08:54:19] root INFO: norm_edit_dis_mc_full:0.09805412649615547
-[2021/07/26 08:54:19] root INFO: norm_edit_dis_mc_long:0.2285647065150171
-[2021/07/26 08:54:19] root INFO: edit_dis_luc_full:0.11041405269761606
-[2021/07/26 08:54:19] root INFO: edit_dis_luc_long:0.26785714285714285
-[2021/07/26 08:54:19] root INFO: edit_dis_mc_full:0.11041405269761606
-[2021/07/26 08:54:19] root INFO: edit_dis_mc_long:0.26785714285714285
-[2021/07/26 08:54:19] root INFO: fps:204.68797797429386
+CUTE80 (288 images):
+Accuracy (LC + UC, all words): 0.1423611111111111
+Accuracy (LC + UC, long words): 0.07142857142857142
+Accuracy (MC, all words): 0.7777777777777778
+Accuracy (MC, long words): 0.5714285714285714
+Normalized edit distance 1 (LC + UC, all words): 0.7655812078253198
+Normalized edit distance 1 (LC + UC, long words): 0.7266784974859508
+Normalized edit distance 1 (MC, all words): 0.10503439545559108
+Normalized edit distance 1 (MC, long words): 0.22397286978032319
+Normalized edit distance 2 (LC + UC, all words): 0.8045112781954887
+Normalized edit distance 2 (LC + UC, long words): 0.6863905325443787
+Normalized edit distance 2 (MC, all words): 0.11528822055137844
+Normalized edit distance 2 (MC, long words): 0.2603550295857988
 
