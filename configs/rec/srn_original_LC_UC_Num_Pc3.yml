@@ -1,6 +1,6 @@
 Global:
   use_gpu: True
-  epoch_num: 480
+  epoch_num: 600
   log_smooth_window: 20
   print_batch_step: 100
   save_model_dir: ./output/rec/srn_original_LC_UC_Num_Pc3
