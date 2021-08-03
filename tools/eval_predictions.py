@@ -5,7 +5,7 @@ import os
 import pathlib
 import sys
 
-def get_dict(filename):
+def get_dict(filename, alphabet="'-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"):
     with open(filename) as f:
         lines = f.readlines()
     word_dict = {}
@@ -14,6 +14,8 @@ def get_dict(filename):
         if len(l) == 0:
             continue
         img_path, label = l.split()[:2]
+        if not set(label.lower()).issubset(alphabet):
+            continue
         word_dict[pathlib.PurePath(img_path).name] = label
     return word_dict
 
@@ -63,9 +65,9 @@ def detailed_stat(predictions_file, target_file, long_word_min_len=10):
         print()
         print()
 
-def general_stat(predictions_file, target_file, long_word_min_len=10):
-    pred_dict = get_dict(predictions_file)
-    target_dict = get_dict(target_file)
+def general_stat(predictions_file, target_file, long_word_min_len=10, alphabet="'-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+    pred_dict = get_dict(predictions_file, alphabet)
+    target_dict = get_dict(target_file, alphabet)
 
     cases = ('LC + UC, all words', 'LC + UC, long words', 'MC, all words', 'MC, long words')
     correct_num = {case: 0 for case in cases}
