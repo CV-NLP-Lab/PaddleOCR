@@ -7,4 +7,5 @@
 | Street View Text | 647 | 91.5% | 88.9% |
 | Street View Text-Perspective | 645 | 85.1% | 79.4% |
 | CUTE80 | 288 | 87.8% | 79.9% |
+| All | 7248 | 90.4% | 85.7% |
 
