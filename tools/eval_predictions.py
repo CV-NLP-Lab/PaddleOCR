@@ -20,8 +20,8 @@ def get_dict(filename, alphabet="'-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGH
     return word_dict
 
 def detailed_stat(predictions_file, target_file, long_word_min_len=10):
-    pred_dict = get_dict(predictions_file)
-    target_dict = get_dict(target_file)
+    pred_dict = get_dict(predictions_file, alphabet)
+    target_dict = get_dict(target_file, alphabet)
 
     alphabet = "'-.0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     cases = ('LC + UC, all words', 'LC + UC, long words', 'MC, all words', 'MC, long words')

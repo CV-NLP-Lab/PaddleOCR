@@ -145,7 +145,7 @@ class BaseRecLabelEncode(object):
         """
         if len(text) == 0 or len(text) > self.max_text_len:
             return None
-        if self.character_type == "en":
+        if self.character_type == "en" or self.character_str.islower():
             text = text.lower()
         text_list = []
         for char in text:
