@@ -60,7 +60,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/training/
+    data_dir: /DATA/data/data_lmdb_release/training/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -86,7 +86,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/evaluation/CUTE80
+    data_dir: /DATA/data/data_lmdb_release/evaluation/CUTE80
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

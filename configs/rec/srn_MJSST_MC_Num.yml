@@ -60,7 +60,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/training/
+    data_dir: /DATA/data/data_lmdb_release/training/
     label_file_list: ["/home/astrashnov/data/rec/ic15_data/rec_gt_train.txt"]
     transforms:
       - DecodeImage: # load image
@@ -90,7 +90,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /home/astrashnov/data/data_lmdb_release/validation/
+    data_dir: /DATA/data/data_lmdb_release/validation/
     label_file_list: ["/home/astrashnov/data/rec/ic15_data/rec_gt_test.txt"]
     transforms:
       - DecodeImage: # load image
