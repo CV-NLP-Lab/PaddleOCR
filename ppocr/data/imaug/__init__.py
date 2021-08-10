@@ -22,6 +22,7 @@ from .make_shrink_map import MakeShrinkMap
 from .random_crop_data import EastRandomCropData, PSERandomCrop
 
 from .rec_img_aug import RecAug, RecResizeImg, ClsResizeImg, SRNRecResizeImg
+from .rec_img_aug32 import SRNRecResizeImg32
 from .randaugment import RandAugment
 from .operators import *
 from .label_ops import *
