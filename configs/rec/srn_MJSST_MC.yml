@@ -1,25 +1,27 @@
 Global:
   use_gpu: True
-  epoch_num: 600
+  epoch_num: 12
   log_smooth_window: 20
-  print_batch_step: 100
-  save_model_dir: ./output/rec/srn32_original_LC_UC_Num_Pc3
-  save_epoch_step: 60
-  eval_batch_step: [0, 1000]
+  print_batch_step: 10
+  save_model_dir: ./output/rec/srn_MJSST_MC
+  save_epoch_step: 1
+  # evaluation is run every 5000 iterations after the 4000th iteration
+  eval_batch_step: [0, 5000]
   cal_metric_during_train: True
-  pretrained_model: 
-  checkpoints: ./output/rec/srn32_original_LC_UC_Num_Pc3/latest
+  pretrained_model: # ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
+  checkpoints: # ./output/rec/srn_lmdb/iter_260000
   save_inference_dir:
   use_visualdl: True
-  infer_img:
+  infer_img: 
   # for data or label process
-  character_dict_path: ppocr/utils/dict/iam_dict.txt
+  character_dict_path: ppocr/utils/dict/iam_small_dict.txt
   character_type: EN
   max_text_length: 25
   num_heads: 8
   infer_mode: False
   use_space_char: False
-  save_res_path: ./output/rec/predicts_srn32_original_LC_UC_Num_Pc3.txt
+  save_res_path: ./output/rec/predicts_srn_MJSST_MC.txt
+
 
 Optimizer:
   name: Adam
@@ -35,7 +37,7 @@ Architecture:
   in_channels: 1
   Transform:
   Backbone:
-    name: ResNetFPN32
+    name: ResNetFPN
   Head:
     name: SRNHead
     max_text_length: 25
@@ -53,20 +55,19 @@ PostProcess:
 Metric:
   name: RecFullMetric
   main_indicator: acc_mc_full
-  long_word_min_len: 10
 
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/rec/iam_data/lmdb_release/training/
+    data_dir: /DATA/data/data_lmdb_release_aug/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
           channel_first: False
       - SRNLabelEncode: # Class handling label
       - RecAug:
-      - SRNRecResizeImg32:
-          image_shape: [1, 32, 100]
+      - SRNRecResizeImg:
+          image_shape: [1, 64, 256]
       - KeepKeys:
           keep_keys: ['image',
                       'label',
@@ -84,14 +85,14 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/rec/iam_data/lmdb_release/validation/
+    data_dir: /DATA/data/data_lmdb_release/validation/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
           channel_first: False
       - SRNLabelEncode: # Class handling label
-      - SRNRecResizeImg32:
-          image_shape: [1, 32, 100]
+      - SRNRecResizeImg:
+          image_shape: [1, 64, 256]
       - KeepKeys:
           keep_keys: ['image',
                       'label',
