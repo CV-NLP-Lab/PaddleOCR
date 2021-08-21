@@ -1,27 +1,25 @@
 Global:
   use_gpu: True
-  epoch_num: 12
+  epoch_num: 60
   log_smooth_window: 20
   print_batch_step: 100
-  save_model_dir: ./output/rec/srn_MJSST_MC
-  save_epoch_step: 1
-  # evaluation is run every 5000 iterations after the 4000th iteration
-  eval_batch_step: [0, 5000]
+  save_model_dir: ./output/rec/srn_MJSST+original_MC
+  save_epoch_step: 100
+  eval_batch_step: [0, 1000]
   cal_metric_during_train: True
-  pretrained_model: # ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
-  checkpoints: # ./output/rec/srn_lmdb/iter_260000
+  pretrained_model: ./output/rec/srn_MJSST_MC/best_accuracy
+  checkpoints: # ./output/rec/srn_original_MC_Num/latest
   save_inference_dir:
   use_visualdl: True
-  infer_img: 
+  infer_img:
   # for data or label process
   character_dict_path: ppocr/utils/dict/iam_small_dict.txt
   character_type: EN
   max_text_length: 25
   num_heads: 8
-  infer_mode: False
+  infer_mode: True
   use_space_char: False
-  save_res_path: ./output/rec/predicts_srn_MJSST_MC.txt
-
+  save_res_path: ./output/rec/predicts_srn_MJSST+original_MC.txt
 
 Optimizer:
   name: Adam
@@ -55,11 +53,12 @@ PostProcess:
 Metric:
   name: RecFullMetric
   main_indicator: acc_mc_full
+  long_word_min_len: 10
 
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/data_lmdb_release_aug/
+    data_dir: /DATA/data/rec/iam_data/lmdb_release/training/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -85,7 +84,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/data_lmdb_release/validation/
+    data_dir: /DATA/data/rec/iam_data/lmdb_release/validation/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR

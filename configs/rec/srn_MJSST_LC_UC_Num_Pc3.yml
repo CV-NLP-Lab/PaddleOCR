@@ -1,18 +1,17 @@
 Global:
   use_gpu: True
-  epoch_num: 6
+  epoch_num: 12
   log_smooth_window: 20
   print_batch_step: 100
   save_model_dir: ./output/rec/srn_MJSST_LC_UC_Num_Pc3
-  save_iter_step: 30000
   save_epoch_step: 1
   # evaluation is run every 5000 iterations after the 4000th iteration
   eval_batch_step: [0, 5000]
   cal_metric_during_train: True
   pretrained_model: # ./pretrain_models/rec_r50_vd_srn_train/best_accuracy
-  checkpoints: # ./output/rec/srn_lmdb/iter_260000
+  checkpoints: ./output/rec/srn_MJSST_LC_UC_Num_Pc3/iter_epoch_6
   save_inference_dir:
-  use_visualdl: False
+  use_visualdl: True
   infer_img: 
   # for data or label process
   character_dict_path: ppocr/utils/dict/iam_dict.txt
@@ -61,7 +60,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/data_lmdb_release/training/
+    data_dir: /DATA/data/data_lmdb_release_aug/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
@@ -87,7 +86,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: /DATA/data/data_lmdb_release/evaluation/
+    data_dir: /DATA/data/data_lmdb_release/validation/
     transforms:
       - DecodeImage: # load image
           img_mode: BGR
