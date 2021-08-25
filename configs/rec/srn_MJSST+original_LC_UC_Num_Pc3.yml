@@ -3,23 +3,23 @@ Global:
   epoch_num: 60
   log_smooth_window: 20
   print_batch_step: 100
-  save_model_dir: ./output/rec/srn_MJSST+original_MC
+  save_model_dir: ./output/rec/srn_MJSST+original_LC_UC_Num_Pc3
   save_epoch_step: 100
   eval_batch_step: [0, 1000]
   cal_metric_during_train: True
-  pretrained_model: ./output/rec/srn_MJSST_MC/best_accuracy
+  pretrained_model: ./output/rec/srn_MJSST_LC_UC_Num_Pc3/latest
   checkpoints: # ./output/rec/srn_original_MC_Num/latest
   save_inference_dir:
   use_visualdl: True
   infer_img:
   # for data or label process
-  character_dict_path: ppocr/utils/dict/iam_small_dict.txt
+  character_dict_path: ppocr/utils/dict/iam_dict.txt
   character_type: EN
   max_text_length: 25
   num_heads: 8
   infer_mode: True
   use_space_char: False
-  save_res_path: ./output/rec/predicts_srn_MJSST+original_MC.txt
+  save_res_path: ./output/rec/predicts_srn_MJSST+original_LC_UC_Num_Pc3.txt
 
 Optimizer:
   name: Adam
